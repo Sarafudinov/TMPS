@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LABA_1/CODE/AbstractFactoryPattern/AbstractFactoryPattern.iml" filepath="$PROJECT_DIR$/LABA_1/CODE/AbstractFactoryPattern/AbstractFactoryPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_2/Adapter/Adapter.iml" filepath="$PROJECT_DIR$/LABA_2/Adapter/Adapter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_2/Bridge/Bridge.iml" filepath="$PROJECT_DIR$/LABA_2/Bridge/Bridge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_1/CODE/BuilderPattern/BuilderPattern.iml" filepath="$PROJECT_DIR$/LABA_1/CODE/BuilderPattern/BuilderPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_3/Chain/Chain.iml" filepath="$PROJECT_DIR$/LABA_3/Chain/Chain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_2/Decorater/Decorater.iml" filepath="$PROJECT_DIR$/LABA_2/Decorater/Decorater.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_2/Facade/Facade.iml" filepath="$PROJECT_DIR$/LABA_2/Facade/Facade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_1/CODE/FactoryPattern/FactoryPattern.iml" filepath="$PROJECT_DIR$/LABA_1/CODE/FactoryPattern/FactoryPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Git.iml" filepath="$PROJECT_DIR$/.idea/Git.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_3/Iterator/Iterator.iml" filepath="$PROJECT_DIR$/LABA_3/Iterator/Iterator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_3/Memento/Memento.iml" filepath="$PROJECT_DIR$/LABA_3/Memento/Memento.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_1/CODE/PrototypePattern/PrototypePattern.iml" filepath="$PROJECT_DIR$/LABA_1/CODE/PrototypePattern/PrototypePattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_2/Proxy/Proxy.iml" filepath="$PROJECT_DIR$/LABA_2/Proxy/Proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_4/SOLID/SOLID.iml" filepath="$PROJECT_DIR$/LABA_4/SOLID/SOLID.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_1/CODE/SingletonePattern/SingletonePattern.iml" filepath="$PROJECT_DIR$/LABA_1/CODE/SingletonePattern/SingletonePattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_3/State/State.iml" filepath="$PROJECT_DIR$/LABA_3/State/State.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LABA_3/Strategy/Strategy.iml" filepath="$PROJECT_DIR$/LABA_3/Strategy/Strategy.iml" />
+    </modules>
+  </component>
+</project>
