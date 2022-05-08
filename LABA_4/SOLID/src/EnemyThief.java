@@ -1,6 +1,5 @@
-public interface EnemyThief {
+public interface EnemyThief extends Enemy{
 
-    String battleRoar();
     void pillage();
 
 }

@@ -1,5 +1,5 @@
-public interface EnemyMage {
+public interface EnemyMage extends Enemy{
 
-    String battleRoar();
+
     void castSpell();
 }

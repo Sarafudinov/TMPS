@@ -6,6 +6,12 @@ import java.util.ArrayList;
     L - Person & Hero
     I - EnemyThief & Goblin | EnemyMage & Elf
     D - EnemyThief & Goblin | EnemyMage & Elf
+
+    S   SRP Принцип единственной ответственности (single responsibility principle)
+    O   OCP Принцип открытости/закрытости (open-closed principle)
+    L	LSP Принцип подстановки Лисков (Liskov substitution principle)
+    I	ISP Принцип разделения интерфейса (interface segregation principle)
+    D	DIP Принцип инверсии зависимостей (dependency inversion principle)
 */
 
 
