@@ -1,0 +1,5 @@
+S - Hero & Characteristics & AdditionalIndicators | Person & Inventory & PersonStatus
+O - Person & Hero | Characteristics & AdditionalIndicators
+L - Person & Hero
+I - EnemyThief & Goblin | EnemyMage & Elf
+D - EnemyThief & Goblin | EnemyMage & Elf
