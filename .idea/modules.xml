@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/LABA_2/Facade/Facade.iml" filepath="$PROJECT_DIR$/LABA_2/Facade/Facade.iml" />
       <module fileurl="file://$PROJECT_DIR$/LABA_1/CODE/FactoryPattern/FactoryPattern.iml" filepath="$PROJECT_DIR$/LABA_1/CODE/FactoryPattern/FactoryPattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Git.iml" filepath="$PROJECT_DIR$/.idea/Git.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Help/Help.iml" filepath="$PROJECT_DIR$/Help/Help.iml" />
       <module fileurl="file://$PROJECT_DIR$/LABA_3/Iterator/Iterator.iml" filepath="$PROJECT_DIR$/LABA_3/Iterator/Iterator.iml" />
       <module fileurl="file://$PROJECT_DIR$/LABA_3/Memento/Memento.iml" filepath="$PROJECT_DIR$/LABA_3/Memento/Memento.iml" />
       <module fileurl="file://$PROJECT_DIR$/LABA_1/CODE/PrototypePattern/PrototypePattern.iml" filepath="$PROJECT_DIR$/LABA_1/CODE/PrototypePattern/PrototypePattern.iml" />
