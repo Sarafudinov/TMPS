@@ -1,27 +1,38 @@
 package FACADE;
 import BUILDER.*;
-import FACTORY.Car;
 import FACTORY.ConcreteCreatorBicycle;
 import FACTORY.ConcreteCreatorCar;
 import FACTORY.Creator;
-import MEMENTO.Caretaker;
-import MEMENTO.Originator;
 import PROXY.CardPayment;
-import PROXY.CashPayment;
 import PROXY.Payment;
+import STATE.OrderPiking;
+import TEMPLATE_METHOD.AndisPizza;
+import TEMPLATE_METHOD.DeliveryRestaurant;
+import TEMPLATE_METHOD.McDonalds;
+import TEMPLATE_METHOD.restaurantsLocation;
 
 import java.util.Locale;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Facade {
 
-    double orderPrice = 0;
-    String ans = "";
-    Scanner scanner = new Scanner(System.in);
-    Order order = new Order();
+    double orderPrice;
+    String ans;
+    Scanner scanner;
+    Order order;
+
+    public Facade() {
+
+        order = new Order();
+        scanner = new Scanner(System.in);
+
+        orderPrice = 0;
+        ans = "";
+        order.setKm((int)(Math.random()*10) + 1);
+    }
 
     public void MenuSelection(){
-
         while(!ans.equals("no")) {
 
             System.out.println("What would you like to order?");
@@ -81,12 +92,14 @@ public class Facade {
             ans = scanner.nextLine();
 
             if (ans.toLowerCase(Locale.ROOT).equals("no")) {
-                System.out.println("Your order:");
                 order.orderInfo();
                 break;
             }
         }
-
+        order.setState(new OrderPiking(order));
+        order.setOrderState(true);
+        System.out.println("\n--------------------State Pattern---------------------\n");
+        System.out.println(order.getState().onOrderPicking());
         orderPrice += order.getPrice(); //order cost
     }
 
@@ -97,49 +110,70 @@ public class Facade {
         System.out.println("2. Car (10/km)");
         ans = scanner.nextLine();
         Creator creator;
+        int inc;
         switch (ans){
             case "1" ->{
-                //creating a shipping method
+                inc = 5;
                 creator = new ConcreteCreatorBicycle();
-                creator.deliveryMethod();
-                int km = (int)(Math.random()*10) + 1;
-                System.out.println("km: " + km);
-                orderPrice += 5 * km;
-                order.setDeliveryPrice(5*km);
+                order.setCollectOrderInfo("\nDelivery method: Bicycle(" + order.getKm() + "km)");
             }
             case "2" -> {
-                //creating a shipping method
+                inc = 10;
                 creator = new ConcreteCreatorCar();
-                creator.deliveryMethod();
-                int km = (int)(Math.random()*10) + 1;
-                System.out.println("km: " + km);
-                orderPrice += 10 * km;
-                order.setDeliveryPrice(10*km);
+                order.setCollectOrderInfo("\nDelivery method: Car (" + order.getKm() + "km)");
             }
+            default -> throw new IllegalStateException("Unexpected value: " + ans);
         }
-
+        creator.deliveryMethod();
+        System.out.println("km: " + order.getKm());
+        orderPrice += inc * order.getKm() - order.getDiscount();
+        order.setDeliveryPrice(inc * order.getKm());
+        order.setPrice(order.getPrice() - order.getDiscount() + order.getDeliveryPrice());
+        order.setCollectOrderInfo("\nDelivery Price: " + order.getDeliveryPrice());
+        System.out.println("Order cost: " + (int) orderPrice);
+        System.out.println("\n--------------------State Pattern---------------------\n");
+        System.out.println(order.getState().onDelivery());
     }
 
-    public void getOrderPrice() {
-        System.out.println("Order cost: " + (int) orderPrice); }
-
     public void OrderPayment(){
-
+        System.out.println("\n--------------------State Pattern---------------------\n");
+        System.out.println(order.getState().onOrderPayment());
+        System.out.println("\n--------------------Proxy pattern--------------------\n");
         Payment payment;
         payment = new CardPayment(orderPrice);
         payment.paymentMethod();
     }
 
-    Caretaker caretaker = new Caretaker();
-    Originator originator = new Originator();
-
-    public void saveOrder(){
-        order.setPrice(orderPrice);
-        originator.setOrder(order);
-        caretaker.addMemento(originator.save());
+    public void getOrderInfo(){
+        order.orderInfo();
     }
 
-    public void restoreOrder(){
-        originator.restore(caretaker.getMemento(0));
+    public void selectRestaurant(){
+        DeliveryRestaurant deliveryRestaurant;
+
+        Random rand = new Random();
+        String randomLocation = "";
+        switch (rand.nextInt(4)+1){
+            case 1 -> randomLocation = restaurantsLocation.ONE.toString();
+            case 2 -> randomLocation = restaurantsLocation.TWO.toString();
+            case 3 -> randomLocation = restaurantsLocation.THREE.toString();
+            case 4 -> randomLocation = restaurantsLocation.FOUR.toString();
+        }
+
+        order.setCollectOrderInfo("\nYour Location: " + randomLocation);
+
+        System.out.println("""
+                Choose restaurant for delivery.
+                1. McDonalds
+                2. AndisPizza""");
+        ans = scanner.nextLine();
+        switch (ans){
+            case "1" -> deliveryRestaurant = new McDonalds("McDonalds", randomLocation);
+            case "2" -> deliveryRestaurant = new AndisPizza("AndisPizza", randomLocation);
+            default ->  deliveryRestaurant = new McDonalds("McDonalds", "Chisinau");
+
+        }
+
+        deliveryRestaurant.changeOrderPrice(order);
     }
 }
